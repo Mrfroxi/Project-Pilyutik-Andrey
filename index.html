@@ -9,41 +9,43 @@
     <title>Коллекция фильмов</title>
 </head>
 <body>
-    <header>
-        <h1>Коллекция фильмов</h1>
-    </header>
-    <main>
-        <div class="control-panel">
-            <div class="search">
-                <input class="search__input" type="text" placeholder="Поиск..." />
+    <div class="container">
+        <main>
+            <header>
+                <h1>Коллекция фильмов</h1>
+            </header>
+            <div class="control-panel">
+                <div class="search">
+                    <input class="search__input" type="text" placeholder="Поиск..." />
+                </div>
+                <div class="filter">
+                    <input class="filter__check" id="favorite" type="checkbox" >
+                    <label for="favorite">Показать Избранные</label>
+                </div>
             </div>
-            <div class="filter">
-                <input class="filter__check" id="favorite" type="checkbox" >
-                <label for="favorite">Показать Избранные</label>
+            <div class="control-panel sorting">
+                <h3 class="sorting__title">Сортировать по:</h3>
+                <button id="rating" class="button">Рейтингу</button>
+                <button id="releaseDate" class="button">Дате релиза</button>
+                <button id="boxOffice" class="button">Бюджету</button>
             </div>
-        </div>
-        <div class="control-panel sorting">
-            <h3 class="sorting__title">Сортировать по:</h3>
-            <button id="rating" class="button">Рейтингу</button>
-            <button id="releaseDate" class="button">Дате выпуска</button>
-            <button id="boxOffice" class="button ">Бюджету</button>
-        </div>
-
-        <div class="film-list">
-           
-        </div>
-    </main>
-
+            <svg class="spinner" viewBox="0 0 50 50">
+                <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+            </svg>
+            <div class="film-list">
+            </div>
+        </main>
+    </div>
     <template id="card-template">
         <div class="card">
             <div class="card__header card-header">
                 <img class="card-header__image" src="./images/posters/jurassic-world.jpg" width="265" height="390"/>
-                <h2 class="card-header__title">Jurassic World: Fallen Kingdom</h2>
             </div>
+            <h2 class="card-header__title">Jurassic World: Fallen Kingdom</h2>
             <div class="card__body">
                 <div class="film-info film-info__rating">
                     <p class="film-info__title">Рейтинг</p>
-                    <p class="film-info__text">10</p>
+                    <p class="film-info__text">7</p>
                 </div>
                 <div class="film-info film-info__release-date">
                     <p class="film-info__title">Дата релиза</p>
@@ -63,10 +65,14 @@
                 </div>
             </div>
             <div class="card__footer">
-                <button class="card__button button button__icon button_add"></button>
+                <button class="card__button button button__icon">
+                    <svg class="button__icon-svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" class="svg-inline--fa fa-plus fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path fill="#f0f0ea" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
+                    </svg>
+                </button>
             </div>
         </div>
     </template>
-    <script type="module"  src="js/main.js"></script>
+    <script type="module" src="./script/main.js"></script>
 </body>
 </html>
